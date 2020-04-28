@@ -57,24 +57,17 @@
 
 ## intent:exercice_search_provider
 - I want to [train](exercice_type) my [legs](muscular_group)
-- I need some [exercices to stay in shape](exercice_type)
+- I need some [exercices](exercice_type)
 - give me some [exercices to work out](exercice_type)
 - I need a [workout](exercice_type)for [arms](muscular_group)
-- [exercices]exercice_type) for [chest](muscular_group)
-- give me a [workout](exercice_type) for [shoulders](muscular_group)
-- i want to [pump](exercice_type) 
-- i have to [lose weight](exercice_type)
+- [exercices](exercice_type) for [chest](muscular_group)
+- give me a [drill](exercice_type) for [shoulders](muscular_group)
+- show me [how to train](exercice_type) my [back](muscular_group)
 
-## intent:exercice_inform
+## inform:exercice_inform
 - [chest](muscular_group)
 - [arms](muscular_group)
 - [back](muscular_group)
 - [legs](muscular_group)
 - [shoulders](muscular_group)
 
-## intent:master_name
-- who created you?
-- who is your master?
-
-## intent:who_is_boss
-- who is the boss?

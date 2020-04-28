@@ -37,3 +37,21 @@
 ## who is boss
 * who_is_boss
    - utter_who_is_boss
+   
+## seach exercices + muscle group
+* greet
+   - utter_greet
+* excercice_search_provider{"exercice_type": "workout"}
+   - utter_ask_muscle_group
+* inform{"muscle_group": "back"}
+   - action_exercice_seach
+* thanks
+   - utter_goodbye
+   
+ ## seach exercices happy path
+* greet
+   - utter_greet
+* excercice_search_provider{"exercice_type": "workout", "muscle_group": "back"}
+   - action_exercice_seach
+* thanks
+   - utter_goodbye  

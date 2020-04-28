@@ -8,6 +8,12 @@ intents:
   - bot_challenge
   - master_name
   - who_is_boss
+  - exercice_search_provider
+  - exercice_inform
+
+entities:
+    - exercice_type
+    - muscular_group
 
 responses:
   utter_greet:
@@ -35,6 +41,28 @@ responses:
   utter_who_is_boss:
   - text: "Ovidiu is the boss."
   
+  utter_ask_muscle_group:
+  - text: "For what muscle group? (chest, arms, legs, back, shoulders)"
+    buttons:
+    - title:"chest"
+       payload:"chest"
+    - title:"arms"
+       payload:"arms"
+    - title:"legs"
+       payload:"legs"
+    - title:"back"
+       payload:"back"  
+    - title:"shoulders"
+       payload:"shoulders"  
+       
+  utter_hi_can_I_help:
+  - text:"Hello. I am a gym assistant. What can i do for you is to give you exercices foar a specified muscle group. How can i help?"
+  - text:"Hi! My name is Gymsystem. How can I help?"
+   
+ 
+  
+
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
