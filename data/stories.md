@@ -1,12 +1,12 @@
 ## happy path
 * greet
-  - utter_greet
+  - utter_how_can_I_help
 * mood_great
   - utter_happy
 
 ## sad path 1
 * greet
-  - utter_greet
+  - utter_how_can_I_help
 * mood_unhappy
   - utter_cheer_up
   - utter_did_that_help
@@ -15,7 +15,7 @@
 
 ## sad path 2
 * greet
-  - utter_greet
+  - utter_how_can_I_help
 * mood_unhappy
   - utter_cheer_up
   - utter_did_that_help
@@ -41,17 +41,23 @@
 ## seach exercices + muscle group
 * greet
    - utter_greet
-* excercice_search_provider{"exercice_type": "workout"}
+* exercice_search_provider{"exercice_type": "workout"}
    - utter_ask_muscle_group
-* inform{"muscle_group": "back"}
-   - action_exercice_seach
-* thanks
+* exercice_inform{"muscle_group": "back"}
+   - action_exercice_search
+   - slot{"muscle_group":"chest"}
+* goodbye
    - utter_goodbye
    
- ## seach exercices happy path
+ ## search exercices happy path
 * greet
-   - utter_greet
-* excercice_search_provider{"exercice_type": "workout", "muscle_group": "back"}
-   - action_exercice_seach
-* thanks
+   - utter_how_can_I_help
+* exercice_search_provider{"exercice_type": "workout", "muscle_group": "back"}
+   - action_exercice_search
+   - slot{"muscle_group":"chest"}
+* goodbye
    - utter_goodbye  
+
+## custom helloworld action
+* helloworld_action
+   -action_hello_world_program

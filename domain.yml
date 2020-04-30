@@ -10,11 +10,22 @@ intents:
   - who_is_boss
   - exercice_search_provider
   - exercice_inform
+  - helloworld_action
+  - inform
 
 entities:
     - exercice_type
     - muscular_group
-
+slots:
+  muscle_group:  
+    type: unfeaturized
+  exercice_type:
+    type: text
+    
+actions:
+ - action_exercice_search
+ - action_hello_world_program
+    
 responses:
   utter_greet:
   - text: "Hey! How are you?"
@@ -43,25 +54,10 @@ responses:
   
   utter_ask_muscle_group:
   - text: "For what muscle group? (chest, arms, legs, back, shoulders)"
-    buttons:
-    - title:"chest"
-       payload:"chest"
-    - title:"arms"
-       payload:"arms"
-    - title:"legs"
-       payload:"legs"
-    - title:"back"
-       payload:"back"  
-    - title:"shoulders"
-       payload:"shoulders"  
-       
-  utter_hi_can_I_help:
-  - text:"Hello. I am a gym assistant. What can i do for you is to give you exercices foar a specified muscle group. How can i help?"
-  - text:"Hi! My name is Gymsystem. How can I help?"
-   
- 
+  - text: "To give you the best {exercice_type} I need to know for what muscle group."
   
-
+  utter_how_can_I_help:
+  - text: "Hi! How can I help you?"
 
 session_config:
   session_expiration_time: 60

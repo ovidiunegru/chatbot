@@ -59,15 +59,21 @@
 - I want to [train](exercice_type) my [legs](muscular_group)
 - I need some [exercices](exercice_type)
 - give me some [exercices to work out](exercice_type)
-- I need a [workout](exercice_type)for [arms](muscular_group)
+- I need a [workout](exercice_type) for [arms](muscular_group)
 - [exercices](exercice_type) for [chest](muscular_group)
 - give me a [drill](exercice_type) for [shoulders](muscular_group)
 - show me [how to train](exercice_type) my [back](muscular_group)
+- I want to [workout](exercice_type)
 
-## inform:exercice_inform
+## intent:exercice_inform
 - [chest](muscular_group)
 - [arms](muscular_group)
 - [back](muscular_group)
 - [legs](muscular_group)
 - [shoulders](muscular_group)
 
+## intent:helloworld_action
+- world
+- programming
+- first programm
+- custom action
