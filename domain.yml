@@ -17,8 +17,8 @@ entities:
     - exercice_type
     - muscular_group
 slots:
-  muscle_group:  
-    type: unfeaturized
+  muscular_group:  
+    type: text
   exercice_type:
     type: text
     
@@ -58,6 +58,7 @@ responses:
   
   utter_how_can_I_help:
   - text: "Hi! How can I help you?"
+  - text: "Hello. I am a gym assistant. What can I do for you is to give you exercices for a specified muscle group. How can i help?"
 
 session_config:
   session_expiration_time: 60

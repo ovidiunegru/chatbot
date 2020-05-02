@@ -23,10 +23,10 @@ class ActionExerciceSearch(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         exercice = tracker.get_slot("exercice_type")
-        muscularGroup = tracker.get_slot("muscle_group")
+        muscularGroup = tracker.get_slot("muscular_group")
         dispatcher.utter_message("Here is the muscle group of the {}:{}".format(exercice,muscularGroup))
 
-        return [SlotSet("muscular group",muscularGroup)]
+        return []
 
 
 class ActionHelloWorldCustom(Action):

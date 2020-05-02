@@ -43,18 +43,18 @@
    - utter_greet
 * exercice_search_provider{"exercice_type": "workout"}
    - utter_ask_muscle_group
-* exercice_inform{"muscle_group": "back"}
-   - action_exercice_search
-   - slot{"muscle_group":"chest"}
+* exercice_inform{"muscular_group": "back"}
+   - action_exercice_search 
+   - slot{"muscular_group":"chest"}
 * goodbye
    - utter_goodbye
    
  ## search exercices happy path
 * greet
    - utter_how_can_I_help
-* exercice_search_provider{"exercice_type": "workout", "muscle_group": "back"}
+* exercice_search_provider{"exercice_type": "workout", "muscular_group": "back"}
    - action_exercice_search
-   - slot{"muscle_group":"chest"}
+   - slot{"muscular_group":"chest"}
 * goodbye
    - utter_goodbye  
 
