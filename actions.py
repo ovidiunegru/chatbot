@@ -27,7 +27,7 @@ class ActionExerciceSearch(Action):
         mydb = mysql.connector.connect(
             host="localhost",
             user="root",
-            passwd="Chifteabobo0228",
+            passwd="p@ss123",
             database="testdatabase"
             #auth_plugin='mysql_native_password'
         )
@@ -36,24 +36,24 @@ class ActionExerciceSearch(Action):
         muscularGroup = tracker.get_slot("muscular_group")
 
         cursor = mydb.cursor()
-        query="SELECT * FROM Exercice where exercice_group = '%s'" % (muscularGroup)
+        query="SELECT * FROM Exercice where exercice_group = '%s'" % muscularGroup
         try:
             cursor.execute(query)
             if cursor.execute(query) == 0:
-                print("Sorry There was an issue")
+                print("The data was extracted")
         except:
-            print("Error 1: unable to retreive data")
+            print("mysql")
 
         #dispatcher.utter_message("Here is the muscle group of the {}:{}".format(exercice,muscularGroup))
-        dispatcher.utter_message("Here are some exercices for {}".format(muscularGroup))
-
+        dispatcher.utter_message("Here are some exercises for {}".format(muscularGroup))
         records = cursor.fetchall()
 
         for exercices in records:
-            exerciceList = exercices[0],
+            dispatcher.utter_message(str(exercices[0]))
 
-        dispatcher.utter_message(str(exerciceList))
         return []
+
+
 
 
 class ActionHelloWorldCustom(Action):
