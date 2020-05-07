@@ -77,3 +77,10 @@
 - programming
 - first programm
 - custom action
+
+# intent:email_inform
+- [qwerty@yahoo.com](user_email)
+- [ovidiunegru@gmail.com](user_email)
+- [bogdan_show@company.com](user_email)
+- [dasd@gmail.com](user_email)
+- [andrei.andreeea84@gmail.com](user_email)

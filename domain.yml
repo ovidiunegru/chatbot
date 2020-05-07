@@ -12,11 +12,16 @@ intents:
   - exercice_inform
   - helloworld_action
   - inform
+  - email_inform
 
 entities:
     - exercice_type
     - muscular_group
+    - user_email
 slots:
+  user_email:
+    type: text
+    auto_fill: false
   muscular_group:  
     type: text
   exercice_type:
@@ -25,6 +30,7 @@ slots:
 actions:
  - action_exercice_search
  - action_hello_world_program
+ - action_confirm_user_email
     
 responses:
   utter_greet:
@@ -59,6 +65,14 @@ responses:
   utter_how_can_I_help:
   - text: "Hi! How can I help you?"
   - text: "Hello. I am a gym assistant. What can I do for you is to give you exercices for a specified muscle group. How can i help?"
+
+  utter_have_we_met:
+  - text: "Hello! I am a gym assistant. Have we talked before?"
+
+  utter_ask_mail_address:
+  - text: "Great! What is your E-mail address?"
+
+
 
 session_config:
   session_expiration_time: 60

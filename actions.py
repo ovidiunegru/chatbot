@@ -13,6 +13,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 from rasa_sdk.forms import FormAction
+
 import mysql.connector
 
 
@@ -36,7 +37,7 @@ class ActionExerciceSearch(Action):
         muscularGroup = tracker.get_slot("muscular_group")
 
         cursor = mydb.cursor()
-        query="SELECT * FROM Exercice where exercice_group = '%s'" % muscularGroup
+        query="SELECT * FROM exercises where exercise_group = '%s'" % muscularGroup
         try:
             cursor.execute(query)
             if cursor.execute(query) == 0:
@@ -53,7 +54,33 @@ class ActionExerciceSearch(Action):
 
         return []
 
+class ActionConfirmUserEmail(Action):
 
+    def name(self) -> Text:
+        return "action_confirm_user_email"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        mydb = mysql.connector.connect(host="localhost", user="root", passwd="p@ss123", database="testdatabase")   # # auth_plugin='mysql_native_password'
+        userEmail = tracker.latest_message.get('text')
+        print(userEmail)
+        query = "select user_name from users where user_email = '{}';".format(userEmail)
+        cursor = mydb.cursor()
+        print(query)
+
+        try:
+            x = cursor.execute(query)
+            if x == 0:
+                print("Sorry, could not find you in the DB")
+            else:
+                result = cursor.fetchone()
+                dispatcher.utter_message("Welcome back, {} !".format(str(result[0])))
+        except:
+            print("SQL statement could not be found")
+
+        return []
 
 
 class ActionHelloWorldCustom(Action):
@@ -68,5 +95,3 @@ class ActionHelloWorldCustom(Action):
         dispatcher.utter_message(text="Hello World! SECOND custom action")
 
         return []
-
-
