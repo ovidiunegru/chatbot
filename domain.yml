@@ -13,19 +13,47 @@ intents:
   - helloworld_action
   - inform
   - email_inform
-
+  - user_name_inform
+  - user_age_inform
+  - user_weight_inform
+  - user_height_inform
+  - user_sex_inform
+  - user_times_at_gym_inform
+  - user_scope_inform
+forms:
+  - form_user
 entities:
     - exercice_type
     - muscular_group
+    - user_name
+    - user_age
+    - user_weight
+    - user_height
+    - user_sex
+    - user_scope
+    - user_times_at_gym
     - user_email
 slots:
-  user_email:
-    type: text
-    auto_fill: false
   muscular_group:  
     type: text
   exercice_type:
     type: text
+  user_name:
+    type: unfeaturized
+  user_age:
+    type: unfeaturized
+  user_weight:
+    type: unfeaturized
+  user_height:
+    type: unfeaturized
+  user_sex:
+    type: unfeaturized
+  user_scope:
+    type: unfeaturized
+  user_times_at_gym:
+    type: unfeaturized
+  user_email:
+    type: unfeaturized
     
 actions:
  - action_exercice_search
@@ -63,14 +91,46 @@ responses:
   - text: "To give you the best {exercice_type} I need to know for what muscle group."
   
   utter_how_can_I_help:
-  - text: "Hi! How can I help you?"
-  - text: "Hello. I am a gym assistant. What can I do for you is to give you exercices for a specified muscle group. How can i help?"
+  - text: "How can I help you?"
+  - text: "What can I do for you is to give you exercices for a specified muscle group. How can i help?"
 
   utter_have_we_met:
   - text: "Hello! I am a gym assistant. Have we talked before?"
 
   utter_ask_mail_address:
   - text: "Great! What is your E-mail address?"
+
+  utter_ask_create_account:
+  - text: "Then tell you about me a little bit. I am a bot that can give you workouts for different muscle groups. 
+  You can fill up your details so that I can give you personalised workouts.
+  Do you want to sign up for this? "
+
+  utter_ask_user_name:
+  - text: "What is your name?"
+
+  utter_ask_user_age:
+  - text: "What is your age?"
+
+  utter_ask_user_weight:
+  - text: "What is your weight?"
+
+  utter_ask_user_height:
+  - text: "What is your height?"
+
+  utter_ask_user_sex:
+  - text: "What is your sex? (M/F)"
+
+  utter_ask_user_scope:
+  - text: "What is your scope? (gain mass, keep fit, loose weight)"
+
+  utter_ask_user_times_at_gym:
+  - text: "How often would you like to workout?"
+
+  utter_ask_user_email:
+  - text: "What is your email?"
+
+  utter_submit:
+  - text: Your name is {name} and your email is {email}. Is this correct?
 
 
 

@@ -45,7 +45,7 @@
    -action_hello_world_program
 
 
-## authentificating the user
+## authentificating the user by email
 * greet
   - utter_have_we_met
 * affirm
@@ -53,4 +53,24 @@
 * email_inform{"user_email": "ovidiu.negru47@gmail.com"}
   - slot{"user_email":""}
   - action_confirm_user_email
+  - utter_how_can_I_help
+
+  ## just asking a questions
+* greet
+  - utter_have_we_met
+* deny
+  - utter_ask_create_account
+* deny
+  - utter_how_can_I_help 
   
+## create a new user
+* greet
+  - utter_have_we_met
+* deny
+  - utter_ask_create_account
+* affirm
+  - form_user
+  - form{"name": "form_user"}
+  - form{"name": null}
+* affirm
+  - utter_goodbye
