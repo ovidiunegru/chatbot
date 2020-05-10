@@ -84,30 +84,36 @@
 - [bogdan_show@company.com](user_email)
 - [dasd@gmail.com](user_email)
 - [andrei.andreeea84@gmail.com](user_email)
+- [johndoe69@gmail.com](user_email)
 
 ## intent:user_name_inform
 - my name is [Negru Ovidiu](user_name)
 - [John Cena](user_name) is my name
 - [Catalin Doinea](user_name)
 - [Bogdan Constantin](user_name)
+- [John Doe](user_name)
 
 ## intent:user_age_inform
 - I am [15](user_age) years of age
+- I am [35](user_age) years age
 - [24](user_age)
 - I have [42](user_age)
 - [30](user_age)
+- [28](user_age)
 
 ## intent:user_weight_inform
 - I have [50](user_weight)kgs
 - [60](user_weight)
 - About [76](user_weight)kilos
 - more than [86](user_weight) kg
+- [78](user_weight)
 
 ## intent:user_height_inform
 - [180](user_height)
 - i am [176](user_height) cm tall
 - I have [168](user_height)cm
 - About [193](user_height) cetimeters
+- [185](user_height)
 
 ## intent:user_sex_inform
 - I am [male](user_sex:M)
@@ -116,6 +122,7 @@
 - [M](user_sex)
 - [f](user_sex:F)
 - [m](user_sex:M)
+- [M](user_sex)
 
 ## intent:user_times_at_gym_inform
 - I am usualy going [5](user_times_at_gym) times per week
@@ -125,8 +132,26 @@
 - [4](user_times_at_gym)
 - [Everyday](user_times_at_gym:7)
 - [none](user_times_at_gym:0)
+- [4](user_times_at_gym)
 
 ## intent:user_scope_inform
 - I just want to [stay fit](user_scope)
 - To [gain mass](user_scope)
 - So that i can [loose weight](user_scope)
+- [loose weight](user_scope)
+
+## synonym:0
+- not usualy going
+- never been before
+- none
+
+## synonym:7
+- Everyday
+
+## synonym:F
+- female
+- f
+
+## synonym:M
+- male
+- m

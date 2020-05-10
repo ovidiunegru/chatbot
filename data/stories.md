@@ -51,7 +51,7 @@
 * affirm
   - utter_ask_mail_address
 * user_email_inform{"user_email": "ovidiu.negru47@gmail.com"}
-  - slot{"user_email_inform":""}
+  - slot{"user_email":"sasgae@asdawd.com"}
   - action_confirm_user_email
   - utter_how_can_I_help
 
@@ -74,3 +74,49 @@
   - form{"name": null}
 * affirm
   - utter_goodbye
+
+## interactive_story_1
+* greet
+    - utter_have_we_met
+* deny
+    - utter_ask_create_account
+* affirm
+    - form_user
+    - form{"name": "form_user"}
+    - slot{"requested_slot": "user_name"}
+* form: user_name_inform{"user_name": "John Doe"}
+    - form: form_user
+    - slot{"user_name": "John Doe"}
+    - slot{"requested_slot": "user_age"}
+* form: user_age_inform{"user_age": "28"}
+    - form: form_user
+    - slot{"user_age": "28"}
+    - slot{"requested_slot": "user_weight"}
+* form: user_weight_inform{"user_weight": "78"}
+    - form: form_user
+    - slot{"user_weight": "78"}
+    - slot{"requested_slot": "user_height"}
+* form: user_height_inform{"user_height": "185"}
+    - form: form_user
+    - slot{"user_height": "185"}
+    - slot{"requested_slot": "user_sex"}
+* form: user_sex_inform{"user_sex": "M"}
+    - form: form_user
+    - slot{"user_sex": "M"}
+    - slot{"requested_slot": "user_scope"}
+* form: user_scope_inform{"user_scope": "loose weight"}
+    - form: form_user
+    - slot{"user_scope": "loose weight"}
+    - slot{"requested_slot": "user_times_at_gym"}
+* form: user_times_at_gym_inform{"user_times_at_gym": "4"}
+    - form: form_user
+    - slot{"user_times_at_gym": "4"}
+    - slot{"requested_slot": "user_email"}
+* form: user_email_inform{"user_email": "johndoe69@gmail.com"}
+    - form: form_user
+    - slot{"user_email": "johndoe69@gmail.com"}
+    - form{"name": null}
+    - slot{"requested_slot": null}
+* affirm
+    - utter_goodbye
+* stop

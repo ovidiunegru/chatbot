@@ -1,147 +1,147 @@
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - master_name
-  - who_is_boss
-  - exercice_search_provider
-  - exercice_inform
-  - helloworld_action
-  - inform
-  - user_email_inform
-  - user_name_inform
-  - user_age_inform
-  - user_weight_inform
-  - user_height_inform
-  - user_sex_inform
-  - user_times_at_gym_inform
-  - user_scope_inform
-forms:
-  - form_user
-entities:
-    - exercice_type
-    - muscular_group
-    - user_name
-    - user_age
-    - user_weight
-    - user_height
-    - user_sex
-    - user_scope
-    - user_times_at_gym
-    - user_email
-slots:
-  muscular_group:  
-    type: text
-  exercice_type:
-    type: text
-  user_name:
-    type: unfeaturized
-    auto_fill: false
-  user_age:
-    type: unfeaturized
-    auto_fill: false
-  user_weight:
-    type: unfeaturized
-    auto_fill: false
-  user_height:
-    type: unfeaturized
-    auto_fill: false
-  user_sex:
-    type: unfeaturized
-    auto_fill: false
-  user_scope:
-    type: unfeaturized
-    auto_fill: false
-  user_times_at_gym:
-    type: unfeaturized
-    auto_fill: false
-  user_email:
-    type: unfeaturized
-    auto_fill: false
-    
 actions:
- - action_exercice_search
- - action_hello_world_program
- - action_confirm_user_email
-    
+- action_confirm_user_email
+- action_exercice_search
+- action_hello_world_program
+- utter_ask_create_account
+- utter_ask_mail_address
+- utter_ask_muscle_group
+- utter_ask_user_age
+- utter_ask_user_email
+- utter_ask_user_height
+- utter_ask_user_name
+- utter_ask_user_scope
+- utter_ask_user_sex
+- utter_ask_user_times_at_gym
+- utter_ask_user_weight
+- utter_cheer_up
+- utter_did_that_help
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_have_we_met
+- utter_how_can_I_help
+- utter_iamabot
+- utter_mastername
+- utter_submit
+- utter_who_is_boss
+entities:
+- exercice_type
+- muscular_group
+- user_age
+- user_email
+- user_height
+- user_name
+- user_scope
+- user_sex
+- user_times_at_gym
+- user_weight
+forms:
+- form_user
+intents:
+- user_sex_inform
+- user_email_inform
+- affirm
+- deny
+- user_name_inform
+- user_times_at_gym_inform
+- stop
+- user_weight_inform
+- user_age_inform
+- user_scope_inform
+- greet
+- user_height_inform
+- goodbye
+- mood_great
+- mood_unhappy
+- bot_challenge
+- master_name
+- who_is_boss
+- exercice_search_provider
+- exercice_inform
+- helloworld_action
+- inform
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-  
-  utter_mastername:
-  - text: "Ovidiu is my master."
-  
-  utter_who_is_boss:
-  - text: "Ovidiu is the boss."
-  
-  utter_ask_muscle_group:
-  - text: "For what muscle group? (chest, arms, legs, back, shoulders)"
-  - text: "To give you the best {exercice_type} I need to know for what muscle group."
-  
-  utter_how_can_I_help:
-  - text: "How can I help you?"
-  - text: "What can I do for you is to give you exercices for a specified muscle group. How can i help?"
-
-  utter_have_we_met:
-  - text: "Hello! I am a gym assistant. Have we talked before?"
-
-  utter_ask_mail_address:
-  - text: "Great! What is your E-mail address?"
-
   utter_ask_create_account:
-  - text: "Then tell you about me a little bit. I am a bot that can give you workouts for different muscle groups. 
-  You can fill up your details so that I can give you personalised workouts.
-  Do you want to sign up for this? "
-
-  utter_ask_user_name:
-  - text: "What is your name?"
-
+  - text: 'Then tell you about me a little bit. I am a bot that can give you workouts
+      for different muscle groups. You can fill up your details so that I can give
+      you personalised workouts. Do you want to sign up for this? '
+  utter_ask_mail_address:
+  - text: Great! What is your E-mail address?
+  utter_ask_muscle_group:
+  - text: For what muscle group? (chest, arms, legs, back, shoulders)
+  - text: To give you the best {exercice_type} I need to know for what muscle group.
   utter_ask_user_age:
-  - text: "What is your age?"
-
-  utter_ask_user_weight:
-  - text: "What is your weight?"
-
-  utter_ask_user_height:
-  - text: "What is your height?"
-
-  utter_ask_user_sex:
-  - text: "What is your sex? (M/F)"
-
-  utter_ask_user_scope:
-  - text: "What is your scope? (gain mass, keep fit, loose weight)"
-
-  utter_ask_user_times_at_gym:
-  - text: "How often would you like to workout?"
-
+  - text: What is your age?
   utter_ask_user_email:
-  - text: "What is your email?"
-
+  - text: What is your email?
+  utter_ask_user_height:
+  - text: What is your height?
+  utter_ask_user_name:
+  - text: What is your name?
+  utter_ask_user_scope:
+  - text: What is your scope? (gain mass, keep fit, loose weight)
+  utter_ask_user_sex:
+  - text: What is your sex? (M/F)
+  utter_ask_user_times_at_gym:
+  - text: How often would you like to workout?
+  utter_ask_user_weight:
+  - text: What is your weight?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_goodbye:
+  - text: Bye
+  utter_greet:
+  - text: Hey! How are you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_have_we_met:
+  - text: Hello! I am a gym assistant. Have we talked before?
+  utter_how_can_I_help:
+  - text: How can I help you?
+  - text: What can I do for you is to give you exercices for a specified muscle group.
+      How can i help?
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_mastername:
+  - text: Ovidiu is my master.
   utter_submit:
   - text: Your name is {name} and your email is {email}. Is this correct?
-
-
-
+  utter_who_is_boss:
+  - text: Ovidiu is the boss.
 session_config:
-  session_expiration_time: 60
   carry_over_slots_to_new_session: true
+  session_expiration_time: 60
+slots:
+  exercice_type:
+    type: text
+  muscular_group:
+    type: text
+  requested_slot:
+    type: unfeaturized
+  user_age:
+    auto_fill: false
+    type: unfeaturized
+  user_email:
+    auto_fill: false
+    type: unfeaturized
+  user_height:
+    auto_fill: false
+    type: unfeaturized
+  user_name:
+    auto_fill: false
+    type: unfeaturized
+  user_scope:
+    auto_fill: false
+    type: unfeaturized
+  user_sex:
+    auto_fill: false
+    type: unfeaturized
+  user_times_at_gym:
+    auto_fill: false
+    type: unfeaturized
+  user_weight:
+    auto_fill: false
+    type: unfeaturized

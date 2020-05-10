@@ -107,14 +107,14 @@ class ActionFormUserInfo(FormAction):
             or a list of them, where a first match will be picked"""
 
         return {
-            "user_name": self.from_text(),
-            "user_age": self.from_text(),
-            "user_weight": self.from_text(),
-            "user_height": self.from_text(),
-            "user_sex": self.from_text(),
-            "user_scope": self.from_text(),
-            "user_times_at_gym": self.from_text(),
-            "user_email": self.from_text(),
+            "user_name": [self.from_text()],
+            "user_age": [self.from_text()],
+            "user_weight": [self.from_text()],
+            "user_height": [self.from_text()],
+            "user_sex": [self.from_text()],
+            "user_scope": [ self.from_text()],
+            "user_times_at_gym": [self.from_text()],
+            "user_email": [self.from_text()],
         }
 
     def submit(
@@ -146,6 +146,7 @@ class ActionFormUserInfo(FormAction):
 
         try:
             result = cursor.execute(query)
+            mydb.commit()
             dispatcher.utter_message(template="utter_submit", name=tracker.get_slot('user_name'),
                                      email=tracker.get_slot('user_email'))
         except:
