@@ -12,7 +12,7 @@ intents:
   - exercice_inform
   - helloworld_action
   - inform
-  - email_inform
+  - user_email_inform
   - user_name_inform
   - user_age_inform
   - user_weight_inform
@@ -40,20 +40,28 @@ slots:
     type: text
   user_name:
     type: unfeaturized
+    auto_fill: false
   user_age:
     type: unfeaturized
+    auto_fill: false
   user_weight:
     type: unfeaturized
+    auto_fill: false
   user_height:
     type: unfeaturized
+    auto_fill: false
   user_sex:
     type: unfeaturized
+    auto_fill: false
   user_scope:
     type: unfeaturized
+    auto_fill: false
   user_times_at_gym:
     type: unfeaturized
+    auto_fill: false
   user_email:
     type: unfeaturized
+    auto_fill: false
     
 actions:
  - action_exercice_search

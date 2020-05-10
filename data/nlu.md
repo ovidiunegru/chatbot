@@ -78,7 +78,7 @@
 - first programm
 - custom action
 
-## intent:email_inform
+## intent:user_email_inform
 - [qwerty@yahoo.com](user_email)
 - [ovidiunegru@gmail.com](user_email)
 - [bogdan_show@company.com](user_email)

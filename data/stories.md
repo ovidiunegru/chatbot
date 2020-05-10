@@ -50,8 +50,8 @@
   - utter_have_we_met
 * affirm
   - utter_ask_mail_address
-* email_inform{"user_email": "ovidiu.negru47@gmail.com"}
-  - slot{"user_email":""}
+* user_email_inform{"user_email": "ovidiu.negru47@gmail.com"}
+  - slot{"user_email_inform":""}
   - action_confirm_user_email
   - utter_how_can_I_help
 

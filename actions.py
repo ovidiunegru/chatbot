@@ -107,22 +107,14 @@ class ActionFormUserInfo(FormAction):
             or a list of them, where a first match will be picked"""
 
         return {
-            "user_name": [self.from_entity(entity="user_name", intent='user_name_inform'),
-                          self.from_text()],
-            "user_age": [self.from_entity(entity="user_age", intent='user_age_inform'),
-                         self.from_text()],
-            "user_weight": [self.from_entity(entity="user_weight", intent='user_weight_inform'),
-                            self.from_text()],
-            "user_height": [self.from_entity(entity="user_height", intent='user_height_inform'),
-                            self.from_text()],
-            "user_sex": [self.from_entity(entity="user_sex", intent='user_sex_inform'),
-                         self.from_text()],
-            "user_scope": [self.from_entity(entity="user_scope", intent='user_scope_inform'),
-                           self.from_text()],
-            "user_times_at_gym": [self.from_entity(entity="user_times_at_gym", intent="user_times_at_gym_inform"),
-                                  self.from_text()],
-            "user_email": [self.from_entity(entity="user_email", intent="email_inform"),
-                           self.from_text()],
+            "user_name": self.from_text(),
+            "user_age": self.from_text(),
+            "user_weight": self.from_text(),
+            "user_height": self.from_text(),
+            "user_sex": self.from_text(),
+            "user_scope": self.from_text(),
+            "user_times_at_gym": self.from_text(),
+            "user_email": self.from_text(),
         }
 
     def submit(
@@ -145,7 +137,7 @@ class ActionFormUserInfo(FormAction):
         mydb = mysql.connector.connect(host="localhost", user="root", passwd="p@ss123",
                                        database="testdatabase")
         query = "insert into users(user_name, user_age, user_weight, user_height, user_sex, user_scope, " \
-                "user_times_at_gym, user_email) values ({},{},{},{},{},{},{},{});".format(user_name, user_age,
+                "user_times_at_gym, user_email) values ('{}',{},{},{},'{}','{}',{},'{}');".format(user_name, user_age,
                                                                                           user_weight, user_height,
                                                                                           user_sex, user_scope,
                                                                                           user_times_at_gym, user_email)
