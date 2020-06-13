@@ -2,6 +2,7 @@ actions:
 - action_confirm_user_email
 - action_exercice_search
 - action_hello_world_program
+- action_search_recipe
 - utter_ask_create_account
 - utter_ask_mail_address
 - utter_ask_muscle_group
@@ -35,12 +36,14 @@ entities:
 - user_sex
 - user_times_at_gym
 - user_weight
+- main_ingredient
 forms:
 - form_user
 intents:
 - user_sex_inform
 - user_email_inform
 - affirm
+- thanks
 - deny
 - user_name_inform
 - user_times_at_gym_inform
@@ -60,6 +63,8 @@ intents:
 - exercice_inform
 - helloworld_action
 - inform
+- ingredient_inform
+- recipe_search_provider
 responses:
   utter_ask_create_account:
   - text: 'Then tell you about me a little bit. I am a bot that can give you workouts
@@ -93,6 +98,9 @@ responses:
   - text: Did that help you?
   utter_goodbye:
   - text: Bye
+  utter_you_are_welcome:
+  - text: You are welcome!
+  - text: Any time!
   utter_greet:
   - text: Hey! How are you?
   utter_happy:
@@ -100,8 +108,7 @@ responses:
   utter_have_we_met:
   - text: Hello! I am a gym assistant. Have we talked before?
   utter_how_can_I_help:
-  - text: How can I help you?
-  - text: What can I do for you is to give you exercices for a specified muscle group.
+  - text: What can I do for you is to give you exercices for a specified muscle group or give you a recipe if you provide me some ingredients.
       How can i help?
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
@@ -145,3 +152,5 @@ slots:
   user_weight:
     auto_fill: false
     type: unfeaturized
+  main_ingredient:
+    type: text

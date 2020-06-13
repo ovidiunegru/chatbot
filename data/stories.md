@@ -73,8 +73,8 @@
   - form{"name": "form_user"}
   - form{"name": null}
 * affirm
-  - utter_goodbye
-
+  - utter_how_can_I_help
+  
 ## interactive_story_1
 * greet
     - utter_have_we_met
@@ -120,3 +120,9 @@
 * affirm
     - utter_goodbye
 * stop
+
+## get recipe from api happy path
+* recipe_search_provider{"main_ingredient": "chicken"}
+  - action_search_recipe
+  - slot{"main_ingredient": "pork"}
+* thanks

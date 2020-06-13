@@ -27,6 +27,11 @@
 - no way
 - not really
 
+## intent:thanks
+- thank you
+- thanks
+- thank you so much
+
 ## intent:mood_great
 - perfect
 - very good
@@ -155,3 +160,35 @@
 ## synonym:M
 - male
 - m
+
+## intent:ingredient_inform
+- [chicken](main_ingredient)
+- [pork](main_ingredient)
+- [fish](main_ingredient)
+- [beef](main_ingredient)
+- [salmon](main_ingredient)
+- [turkey](main_ingredient)
+- [tomatoes](main_ingredient)
+- [tuna](main_ingredient)
+- [eggs](main_ingredient)
+- [spagetti](main_ingredient)
+- [pasta](main_ingredient)
+- [seafood](main_ingredient)
+- [potatoes](main_ingredient)
+- [fries](main_ingredient)
+- [salad](main_ingredient)
+- [chips](main_ingredient)
+
+
+## intent:recipe_search_provider
+- Can you please provide me a recipe with [chicken](main_ingredient)?
+- I would like to eat something with [salmon](main_ingredient)
+- I have [turkey](main_ingredient). What can i cook with it?
+- I am hungry. I only have some frozen [pork](main_ingredient)
+- What can I cook with [eggs](main_ingredient)
+- i have [tuna](main_ingredient). what can i cook with it?
+- lunch with [pasta](main_ingredient)
+- [tuna](main_ingredient) for breakfast
+- An [avocado](main_ingredient) recipe
+- A recipe with [cheese](main_ingredient)
+

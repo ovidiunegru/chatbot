@@ -16,6 +16,11 @@ from rasa_sdk.forms import FormAction
 
 import mysql.connector
 
+from urllib.request import urlopen
+import json
+
+
+
 
 class ActionExerciceSearch(Action):
 
@@ -157,6 +162,52 @@ class ActionFormUserInfo(FormAction):
     # def validate(self,dispatcher: CollectingDispatcher,tracker: Tracker,domain: Dict[Text, Any]) -> List[Dict]:
     #     userName=tracker.get_slot('user_name')
     #     dispatcher.utter_message(str(userName))
+
+
+class ActionRecipeSearch(Action):
+
+    def name(self) -> Text:
+        return "action_search_recipe"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+
+        app_id = 'ff85071b'
+        app_key = 'd3efa4ef3ec092ef2cc016bb530897f4'
+
+
+        recipeIngredients = tracker.get_slot('main_ingredient')
+
+        if not recipeIngredients:
+            print(recipeIngredients)
+        else:
+            print(recipeIngredients)
+            url = "https://api.edamam.com/search?q='%s'&app_id=ff85071b&app_key=d3efa4ef3ec092ef2cc016bb530897f4&from=0&to=3" %recipeIngredients
+            
+            data = json.load(urlopen(url))
+            print(url)
+
+            for d in data['hits']:
+                recipe = d['recipe']
+                recipeName = recipe.get('label')
+                ingredients = recipe.get('ingredientLines')
+                ingredient = ingredients[0]
+
+                dispatcher.utter_message(text="Recipe: {}".format(recipeName))
+                dispatcher.utter_message(text="Recipe ingredients: {}".format(ingredient))
+
+                print("Recipe name: ",recipeName)
+                print("Recipe ingredients: " , ingredient)
+
+
+        return []
+
+
+
+
+
 
 
 class ActionHelloWorldCustom(Action):
