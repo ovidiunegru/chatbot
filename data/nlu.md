@@ -82,6 +82,7 @@
 - programming
 - first programm
 - custom action
+- Can you please provide me a personalized workout
 
 ## intent:user_email_inform
 - [qwerty@yahoo.com](user_email)
@@ -127,7 +128,6 @@
 - [M](user_sex)
 - [f](user_sex:F)
 - [m](user_sex:M)
-- [M](user_sex)
 
 ## intent:user_times_at_gym_inform
 - I am usualy going [5](user_times_at_gym) times per week
@@ -137,29 +137,12 @@
 - [4](user_times_at_gym)
 - [Everyday](user_times_at_gym:7)
 - [none](user_times_at_gym:0)
-- [4](user_times_at_gym)
 
 ## intent:user_scope_inform
 - I just want to [stay fit](user_scope)
 - To [gain mass](user_scope)
 - So that i can [loose weight](user_scope)
 - [loose weight](user_scope)
-
-## synonym:0
-- not usualy going
-- never been before
-- none
-
-## synonym:7
-- Everyday
-
-## synonym:F
-- female
-- f
-
-## synonym:M
-- male
-- m
 
 ## intent:ingredient_inform
 - [chicken](main_ingredient)
@@ -178,7 +161,7 @@
 - [fries](main_ingredient)
 - [salad](main_ingredient)
 - [chips](main_ingredient)
-
+- [broccoli](main_ingredient)
 
 ## intent:recipe_search_provider
 - Can you please provide me a recipe with [chicken](main_ingredient)?
@@ -192,3 +175,37 @@
 - An [avocado](main_ingredient) recipe
 - A recipe with [cheese](main_ingredient)
 
+## intent:calories_search_provider
+- Here is what i eat today
+- Can you please calculate my calories for today
+- how many calories i eat today?
+- i think i ate too much
+- i exagerated today
+- today i ate
+- calculate the calories please
+
+## intent:gym_search_provider
+- show me some gyms
+- where can i find a gym
+- where can i go and exercise
+- nearby gyms
+- closest gyms
+
+## intent:meal_inform
+- 2 [avocados](main_ingredient)
+
+## synonym:0
+- not usualy going
+- never been before
+- none
+
+## synonym:7
+- Everyday
+
+## synonym:F
+- female
+- f
+
+## synonym:M
+- male
+- m

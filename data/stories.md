@@ -31,19 +31,24 @@
    - action_exercice_search 
    - slot{"muscular_group":"chest"}
 * goodbye
-   - utter_goodbye
+   - utter_how_can_I_help
    
  ## search exercices happy path
 * exercice_search_provider{"exercice_type": "workout", "muscular_group": "back"}
    - action_exercice_search
    - slot{"muscular_group":"chest"}
 * goodbye
-   - utter_goodbye  
+   - utter_how_can_I_help  
 
 ## custom helloworld action
 * helloworld_action
    -action_hello_world_program
 
+## search for gym
+* gym_search_provider
+  -action_search_gym
+* thanks
+  - utter_you_are_welcome
 
 ## authentificating the user by email
 * greet
@@ -125,4 +130,19 @@
 * recipe_search_provider{"main_ingredient": "chicken"}
   - action_search_recipe
   - slot{"main_ingredient": "pork"}
+* thanks
+
+## get meal search
+* calories_search_provider
+  - utter_ask_meal
+* ingredient_inform{"main_ingredient": "pork"}
+  - action_search_meal
+* thanks
+
+## interactive_story_1
+* calories_search_provider
+    - utter_ask_meal
+* meal_inform{"main_ingredient": "avocados"}
+    - slot{"main_ingredient": "avocados"}
+    - action_search_meal
 * thanks

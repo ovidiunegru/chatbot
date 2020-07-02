@@ -1,0 +1,359 @@
+[
+  {
+    "text": "not very good",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "user_times_at_gym",
+        "start": 0,
+        "end": 3,
+        "extractor": "DIETClassifier",
+        "value": "not"
+      }
+    ]
+  },
+  {
+    "text": "I want to train my legs",
+    "entities": [
+      {
+        "start": 10,
+        "end": 15,
+        "value": "train",
+        "entity": "exercice_type"
+      },
+      {
+        "start": 19,
+        "end": 23,
+        "value": "legs",
+        "entity": "muscular_group"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 10,
+        "end": 15,
+        "value": "train",
+        "entity": "exercice_type",
+        "confidence": 0.6966971685505201,
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "start": 19,
+        "end": 23,
+        "value": "legs",
+        "entity": "muscular_group",
+        "confidence": 0.8739149846611136,
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "exercice_type",
+        "start": 7,
+        "end": 15,
+        "extractor": "DIETClassifier",
+        "value": "to train"
+      },
+      {
+        "entity": "muscular_group",
+        "start": 19,
+        "end": 23,
+        "extractor": "DIETClassifier",
+        "value": "legs"
+      }
+    ]
+  },
+  {
+    "text": "I have 50kgs",
+    "entities": [
+      {
+        "start": 7,
+        "end": 9,
+        "value": "50",
+        "entity": "user_weight"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "60",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "60",
+        "entity": "user_weight"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "60",
+        "entity": "user_weight",
+        "confidence": 0.779151868131203,
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "user_age",
+        "start": 0,
+        "end": 2,
+        "extractor": "DIETClassifier",
+        "value": "60"
+      }
+    ]
+  },
+  {
+    "text": "About 76kilos",
+    "entities": [
+      {
+        "start": 6,
+        "end": 8,
+        "value": "76",
+        "entity": "user_weight"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "more than 86 kg",
+    "entities": [
+      {
+        "start": 10,
+        "end": 12,
+        "value": "86",
+        "entity": "user_weight"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 10,
+        "end": 12,
+        "value": "86",
+        "entity": "user_weight",
+        "confidence": 0.792180522281152,
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "user_age",
+        "start": 10,
+        "end": 12,
+        "extractor": "DIETClassifier",
+        "value": "86"
+      }
+    ]
+  },
+  {
+    "text": "78",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "78",
+        "entity": "user_weight"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "78",
+        "entity": "user_weight",
+        "confidence": 0.779151868131203,
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "user_age",
+        "start": 0,
+        "end": 2,
+        "extractor": "DIETClassifier",
+        "value": "78"
+      }
+    ]
+  },
+  {
+    "text": "180",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "180",
+        "entity": "user_height"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "180",
+        "entity": "user_height",
+        "confidence": 0.8078135300833544,
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "user_age",
+        "start": 0,
+        "end": 3,
+        "extractor": "DIETClassifier",
+        "value": "180"
+      }
+    ]
+  },
+  {
+    "text": "i am 176 cm tall",
+    "entities": [
+      {
+        "start": 5,
+        "end": 8,
+        "value": "176",
+        "entity": "user_height"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 5,
+        "end": 8,
+        "value": "176",
+        "entity": "user_height",
+        "confidence": 0.8065232477626549,
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "user_age",
+        "start": 5,
+        "end": 8,
+        "extractor": "DIETClassifier",
+        "value": "176"
+      }
+    ]
+  },
+  {
+    "text": "I have 168cm",
+    "entities": [
+      {
+        "start": 7,
+        "end": 10,
+        "value": "168",
+        "entity": "user_height"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "185",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "185",
+        "entity": "user_height"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "185",
+        "entity": "user_height",
+        "confidence": 0.8078135300833544,
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "user_age",
+        "start": 0,
+        "end": 3,
+        "extractor": "DIETClassifier",
+        "value": "185"
+      }
+    ]
+  },
+  {
+    "text": "about 3 pe week",
+    "entities": [
+      {
+        "start": 6,
+        "end": 7,
+        "value": "3",
+        "entity": "user_times_at_gym"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 6,
+        "end": 7,
+        "value": "3",
+        "entity": "user_times_at_gym",
+        "confidence": 0.7949205205392668,
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "user_age",
+        "start": 6,
+        "end": 7,
+        "extractor": "DIETClassifier",
+        "value": "3"
+      }
+    ]
+  },
+  {
+    "text": "4",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "4",
+        "entity": "user_times_at_gym"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "4",
+        "entity": "user_times_at_gym",
+        "confidence": 0.7952132356763955,
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "user_age",
+        "start": 0,
+        "end": 1,
+        "extractor": "DIETClassifier",
+        "value": "4"
+      }
+    ]
+  },
+  {
+    "text": "I just want to stay fit",
+    "entities": [
+      {
+        "start": 15,
+        "end": 23,
+        "value": "stay fit",
+        "entity": "user_scope"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "start": 15,
+        "end": 23,
+        "value": "stay fit",
+        "entity": "user_scope",
+        "confidence": 0.8160646429578705,
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "exercice_type",
+        "start": 12,
+        "end": 14,
+        "extractor": "DIETClassifier",
+        "value": "to"
+      },
+      {
+        "entity": "user_scope",
+        "start": 15,
+        "end": 23,
+        "extractor": "DIETClassifier",
+        "value": "stay fit"
+      }
+    ]
+  }
+]

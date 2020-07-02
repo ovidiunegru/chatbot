@@ -1,0 +1,42 @@
+[
+  {
+    "text": "60",
+    "intent": "user_weight_inform",
+    "intent_prediction": {
+      "name": "user_age_inform",
+      "confidence": 0.3140270709991455
+    }
+  },
+  {
+    "text": "78",
+    "intent": "user_weight_inform",
+    "intent_prediction": {
+      "name": "user_age_inform",
+      "confidence": 0.3140270709991455
+    }
+  },
+  {
+    "text": "180",
+    "intent": "user_height_inform",
+    "intent_prediction": {
+      "name": "user_age_inform",
+      "confidence": 0.3140270709991455
+    }
+  },
+  {
+    "text": "185",
+    "intent": "user_height_inform",
+    "intent_prediction": {
+      "name": "user_age_inform",
+      "confidence": 0.3140270709991455
+    }
+  },
+  {
+    "text": "4",
+    "intent": "user_times_at_gym_inform",
+    "intent_prediction": {
+      "name": "user_age_inform",
+      "confidence": 0.3140270709991455
+    }
+  }
+]

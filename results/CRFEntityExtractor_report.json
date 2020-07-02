@@ -1,0 +1,86 @@
+{
+  "muscular_group": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10
+  },
+  "user_sex": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6
+  },
+  "user_height": {
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1-score": 0.888888888888889,
+    "support": 5
+  },
+  "user_email": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6
+  },
+  "user_times_at_gym": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 11
+  },
+  "exercice_type": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 13
+  },
+  "user_name": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10
+  },
+  "user_weight": {
+    "precision": 1.0,
+    "recall": 0.6,
+    "f1-score": 0.7499999999999999,
+    "support": 5
+  },
+  "main_ingredient": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 26
+  },
+  "user_age": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6
+  },
+  "user_scope": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8
+  },
+  "micro avg": {
+    "precision": 1.0,
+    "recall": 0.9716981132075472,
+    "f1-score": 0.985645933014354,
+    "support": 106
+  },
+  "macro avg": {
+    "precision": 1.0,
+    "recall": 0.9454545454545454,
+    "f1-score": 0.9671717171717172,
+    "support": 106
+  },
+  "weighted avg": {
+    "precision": 1.0,
+    "recall": 0.9716981132075472,
+    "f1-score": 0.9829664570230607,
+    "support": 106
+  }
+}

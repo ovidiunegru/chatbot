@@ -2,9 +2,12 @@ actions:
 - action_confirm_user_email
 - action_exercice_search
 - action_hello_world_program
+- action_search_meal
 - action_search_recipe
+- action_search_gym
 - utter_ask_create_account
 - utter_ask_mail_address
+- utter_ask_meal
 - utter_ask_muscle_group
 - utter_ask_user_age
 - utter_ask_user_email
@@ -25,8 +28,10 @@ actions:
 - utter_mastername
 - utter_submit
 - utter_who_is_boss
+- utter_you_are_welcome
 entities:
 - exercice_type
+- main_ingredient
 - muscular_group
 - user_age
 - user_email
@@ -36,14 +41,16 @@ entities:
 - user_sex
 - user_times_at_gym
 - user_weight
-- main_ingredient
 forms:
 - form_user
 intents:
+- gym_search_provider
+- calories_search_provider
+- meal_inform
+- thanks
 - user_sex_inform
 - user_email_inform
 - affirm
-- thanks
 - deny
 - user_name_inform
 - user_times_at_gym_inform
@@ -72,6 +79,8 @@ responses:
       you personalised workouts. Do you want to sign up for this? '
   utter_ask_mail_address:
   - text: Great! What is your E-mail address?
+  utter_ask_meal:
+  - text: Alright! Tell me what you ate.
   utter_ask_muscle_group:
   - text: For what muscle group? (chest, arms, legs, back, shoulders)
   - text: To give you the best {exercice_type} I need to know for what muscle group.
@@ -88,7 +97,7 @@ responses:
   utter_ask_user_sex:
   - text: What is your sex? (M/F)
   utter_ask_user_times_at_gym:
-  - text: How often would you like to workout?
+  - text: How often would you like to workout (days per week)?
   utter_ask_user_weight:
   - text: What is your weight?
   utter_cheer_up:
@@ -98,9 +107,6 @@ responses:
   - text: Did that help you?
   utter_goodbye:
   - text: Bye
-  utter_you_are_welcome:
-  - text: You are welcome!
-  - text: Any time!
   utter_greet:
   - text: Hey! How are you?
   utter_happy:
@@ -108,8 +114,8 @@ responses:
   utter_have_we_met:
   - text: Hello! I am a gym assistant. Have we talked before?
   utter_how_can_I_help:
-  - text: What can I do for you is to give you exercices for a specified muscle group or give you a recipe if you provide me some ingredients.
-      How can i help?
+  - text: What can I do for you is to give you exercices for a specified muscle group
+      or give you a recipe if you provide me some ingredients. How can i help?
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
   utter_mastername:
@@ -118,11 +124,16 @@ responses:
   - text: Your name is {name} and your email is {email}. Is this correct?
   utter_who_is_boss:
   - text: Ovidiu is the boss.
+  utter_you_are_welcome:
+  - text: You are welcome!
+  - text: Any time!
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60
 slots:
   exercice_type:
+    type: text
+  main_ingredient:
     type: text
   muscular_group:
     type: text
@@ -152,5 +163,3 @@ slots:
   user_weight:
     auto_fill: false
     type: unfeaturized
-  main_ingredient:
-    type: text

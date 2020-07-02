@@ -1,0 +1,38 @@
+[
+  {
+    "text": "I have 50kgs",
+    "entities": [
+      {
+        "start": 7,
+        "end": 9,
+        "value": "50",
+        "entity": "user_weight"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "About 76kilos",
+    "entities": [
+      {
+        "start": 6,
+        "end": 8,
+        "value": "76",
+        "entity": "user_weight"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I have 168cm",
+    "entities": [
+      {
+        "start": 7,
+        "end": 10,
+        "value": "168",
+        "entity": "user_height"
+      }
+    ],
+    "predicted_entities": []
+  }
+]
