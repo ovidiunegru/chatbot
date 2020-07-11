@@ -131,6 +131,7 @@
   - action_search_recipe
   - slot{"main_ingredient": "pork"}
 * thanks
+  - utter_you_are_welcome
 
 ## get meal search
 * calories_search_provider
@@ -138,6 +139,13 @@
 * ingredient_inform{"main_ingredient": "pork"}
   - action_search_meal
 * thanks
+  - utter_you_are_welcome
+
+## generate workout
+* generate_workout
+  - action_generate_workout
+* thanks
+  - utter_you_are_welcome
 
 ## interactive_story_1
 * calories_search_provider

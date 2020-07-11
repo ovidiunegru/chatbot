@@ -22,7 +22,14 @@ import json
 import googlemaps
 import time
 
+from docx import Document
+from docx.shared import Inches
 
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email import encoders
 
 
 class ActionExerciceSearch(Action):
@@ -92,11 +99,12 @@ class ActionConfirmUserEmail(Action):
                 dispatcher.utter_message("Sorry I could not find you by your email! :( ")
             else:
                 result = cursor.fetchone()
+                
                 dispatcher.utter_message("Welcome back, {} !".format(str(result[0])))
                 dispatcher.utter_message("How can I help you?")
         except:
             dispatcher.utter_message("Sorry I could not find you by your email! :( ")
-        return []
+        return [SlotSet("user_email", userEmail)]
 
 
 class ActionFormUserInfo(FormAction):
@@ -312,6 +320,154 @@ class ActionGymSearch(Action):
 
         return []
 
+
+class ActionHelloWorldCustom(Action):
+
+    def name(self) -> Text:
+        return "action_generate_workout"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+
+        dispatcher.utter_message(text="Just a moment")
+
+        print("action_generate_workout")
+
+        mydb = mysql.connector.connect(host="localhost", user="root", passwd="p@ss123",
+                                    database="testdatabase")  # # auth_plugin='mysql_native_password'
+        userEmail = tracker.get_slot('user_email')
+        print(userEmail)
+        query = "select user_times_at_gym, user_scope from users where user_email = '{}';".format(userEmail)
+        cursor = mydb.cursor()
+        print(query)
+
+        no_days_workout=''
+        scope_workout = ''
+
+        try:
+            x = cursor.execute(query)
+            if x == 0:
+                print("Sorry, could not find you in the DB")
+                dispatcher.utter_message("Sorry I could not find you by your email! :( ")
+            else:
+                result = cursor.fetchone()
+                no_days_workout=result[0]
+                scope_workout = result[1]
+                print(no_days_workout, scope_workout)
+        except:
+            dispatcher.utter_message("Sorry I could not find you by your email! :( ")
+
+
+
+
+
+
+        noDaysWorkout = no_days_workout
+        emailAddress = userEmail
+        fileNameWord = 'PersonalisedWorkout.docx'
+
+        document = Document()
+        document.add_heading('Workout plan', 0)
+        p = document.add_paragraph('Below you will find a detailed version of your personal workout:')
+
+        query = "select exerciseName from workout{} where dayNo = {};".format(noDaysWorkout, 1)
+        print(query)
+        mydb = mysql.connector.connect(host="localhost", user="root", passwd="p@ss123",
+                                    database="testdatabase")  # # auth_plugin='mysql_native_password'
+
+        iterator = 1
+        while iterator <= noDaysWorkout:
+            query = "select exerciseName from workout{} where dayNo = {};".format(noDaysWorkout, iterator)
+            cursor = mydb.cursor()
+            print(query)
+            x = cursor.execute(query)
+            if x == 0:
+                print("Sorry, could not find you in the DB")
+            else:
+                result = cursor.fetchall()
+                print(result)
+
+                document.add_heading('Day {}'.format(iterator), level=1)
+                print("Creating word document")
+                table = document.add_table(rows=1, cols=2)
+                hdr_cells = table.rows[0].cells
+                hdr_cells[0].text = 'No Crt'
+                hdr_cells[1].text = 'Exercise Name'
+                counter = 1
+                for exercise in result:
+                    row_cells = table.add_row().cells
+                    row_cells[0].text = str(counter)
+                    row_cells[1].text = exercise[0]
+                    counter = counter + 1
+
+                print("Creating word document pt2") 
+                iterator = iterator + 1
+
+        p = document.add_paragraph('This particular workout split is made in order to first get you used to the volume during '
+                                'the first {} weeks. As you can see, you only have {} workout days. Once you get accustomed '
+                                'to it, in the final 4 weeks the volume and frequency will go up to 5 workouts a week. '
+                                'Really important, whenever you can increase weights from one workout to another, do it, '
+                                'as long as you are doing the amount of reps and sets with proper form. Progress is CRUCIAL '
+                                ''.format(iterator - 1, iterator - 1))
+
+        p = document.add_paragraph('Before starting the workout do not forget to warm yourself up. You can try the following:   march on the spot: keep going for 3 minutes, heel digs: aim for 60 heel digs in 60 seconds, knee lifts: aim for 30 knee lifts in 30 seconds, shoulder rolls: 2 sets of 10 repetitions, knee bends: 10 repetitions.')
+
+        if scope_workout == 'gain mass':
+            p = document.add_paragraph('For GAINING MASS, you will have to workout in the following order: you have to execute the workout above in a slow manner, with big weights and a low number of reps.')
+            p = document.add_paragraph('For each exercise you have to do 4 SETS and between 6 to 8 REPS.')
+            p = document.add_paragraph('Try to increase the weights as soon as possible. ')
+        elif scope_workout == 'keep fit':
+            p = document.add_paragraph('For KEEPING FIT you will have to workout in the following order: you have to execute the workout above in a normal manner, with medium weights and an average number of reps.')
+            p = document.add_paragraph('For each exercise you have to do 4 SETS and between 8 to 10 REPS.')
+            p = document.add_paragraph('Try to do the exericses as correct as possible, described in the videos.')
+        elif scope_workout == 'loose weight':
+            p = document.add_paragraph('For LOOSING WEIGHT you will have to workout in the following order: you have to execute the workout above in a fast manner, with low weights and a high number of reps.')
+            p = document.add_paragraph('For each exercise you have to do 4 SETS and between 14 to 16 REPS.')
+            p = document.add_paragraph('Try to do the exericses in an intense manner so that you will burn more calories.')
+            p = document.add_paragraph('Before starting the workout to a 30 min set of bicycle run.')
+
+
+        document.save(fileNameWord)
+
+        email_user = 'thefitnessbot@gmail.com'
+        email_password = 'Restanta123'
+        email_send = emailAddress
+
+        subject = 'Personal workout'
+
+        msg = MIMEMultipart()
+        msg['From'] = email_user
+        msg['To'] = email_send
+        msg['Subject'] = subject
+
+        body = 'Hi there, you will find attached your personalised workout, created by GymChat!'
+        msg.attach(MIMEText(body, 'plain'))
+
+        filename = fileNameWord
+        attachment = open(filename, 'rb')
+
+        part = MIMEBase('application', 'octet-stream')
+        part.set_payload((attachment).read())
+        encoders.encode_base64(part)
+        part.add_header('Content-Disposition', "attachment; filename= " + filename)
+
+        msg.attach(part)
+        text = msg.as_string()
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(email_user, email_password)
+
+
+        print("Send mail")
+        server.sendmail(email_user, email_send, text)
+        server.quit()
+
+
+        dispatcher.utter_message(text="Please check your mail, you will find the workout there!")
+
+        return []
 
 
 class ActionHelloWorldCustom(Action):

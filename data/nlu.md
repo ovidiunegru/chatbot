@@ -191,8 +191,17 @@
 - nearby gyms
 - closest gyms
 
+## intent:generate_workout
+- can you please provide me a workout
+- i would like a personalized workout
+- how about a new workout
+- i need a workout
+- i want a workout to match my needs
+
 ## intent:meal_inform
 - 2 [avocados](main_ingredient)
+- [chicken](main_ingredient)
+- [pork](main_ingredient)
 
 ## synonym:0
 - not usualy going

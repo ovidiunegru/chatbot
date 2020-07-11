@@ -5,6 +5,7 @@ actions:
 - action_search_meal
 - action_search_recipe
 - action_search_gym
+- action_generate_workout
 - utter_ask_create_account
 - utter_ask_mail_address
 - utter_ask_meal
@@ -44,6 +45,7 @@ entities:
 forms:
 - form_user
 intents:
+- generate_workout
 - gym_search_provider
 - calories_search_provider
 - meal_inform
