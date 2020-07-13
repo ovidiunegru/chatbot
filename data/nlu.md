@@ -203,6 +203,42 @@
 - [chicken](main_ingredient)
 - [pork](main_ingredient)
 
+## intent:reset
+- reset
+- reset the dialogue
+- delete
+
+## intent:exercises_details_search_provider
+- how to properly exercise [Barbell Bench Press](exercise_name)
+- what is the correct way of doing[Barbell Squat](exercise_name)
+- how to do [Dumbbell Shoulder Press](exercise_name)
+- i need to know how to do [Barbell Curl](exercise_name)
+- let me know how to train [Low-Incline Barbell Bench Press](exercise_name)
+- how should i do [Machine Decline Press](exercise_name)
+- how to correctly execute [Cable Fly](exercise_name)
+- how should i execute [Lateral Raise](exercise_name)
+- [Bent over reverse fly](exercise_name)
+- how to propperly execute [Close-Grip Bench Press](exercise_name)
+- can you please tell me how to execute [EZ-Bar Skullcrusher](exercise_name)
+- describe me how to do [Single-Arm Cable Push-Down](exercise_name)
+- how should i do [Deadlift](exercise_name)
+- how i may execute [Lat pull-down](exercise_name)
+
+## intent:exercises_details_inform
+- [Close-Grip Pull-Down](exercise_name)
+- [Seated Cable Row w/ Pause](exercise_name)
+- [Dumbbell Single Arm Row](exercise_name)
+- [Standing Hammer Curls](exercise_name)
+- [Seated Alternating Dumbbell Curls](exercise_name)
+- [Preacher Curl](exercise_name)
+- [Farmers Carry](exercise_name)
+- [Face Pull](exercise_name)
+- [Leg press](exercise_name)
+- [Bodyweight lunges](exercise_name)
+- [Leg extensions](exercise_name)
+- [Leg curls](exercise_name)
+- [Calf Extensions](exercise_name)
+
 ## synonym:0
 - not usualy going
 - never been before

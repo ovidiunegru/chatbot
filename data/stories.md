@@ -147,6 +147,17 @@
 * thanks
   - utter_you_are_welcome
 
+## reset
+* reset
+  - action_reset_conversation
+
+## search exercise
+* exercises_details_search_provider{"exercise_name": "Dumbbell Shoulder Press"}
+  - action_search_exercise
+  - slot{"exercise_name":"Seated Alternating Dumbbell Curls"}
+* thanks
+  - utter_you_are_welcome
+
 ## interactive_story_1
 * calories_search_provider
     - utter_ask_meal

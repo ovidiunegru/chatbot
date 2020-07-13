@@ -31,6 +31,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
 
+from rasa_sdk.events import AllSlotsReset
+
 
 class ActionExerciceSearch(Action):
 
@@ -151,14 +153,21 @@ class ActionFormUserInfo(FormAction):
         user_scope = tracker.get_slot('user_scope')
         user_times_at_gym = tracker.get_slot('user_times_at_gym')
         user_email = tracker.get_slot('user_email')
+        user_calories = 0
+        if user_sex == "F":
+            user_calories = 387 - (7.31 * int(user_age)) + 1.27 * ((10.9 * int(user_weight)) + (660.7 * int(user_height)))
+        else:
+            user_calories = 864  - (9.72 * int(user_age)) + 1.27 * ((14.2 * int(user_weight)) + (503 * int(user_height)))
+
 
         mydb = mysql.connector.connect(host="localhost", user="root", passwd="p@ss123",
                                        database="testdatabase")
         query = "insert into users(user_name, user_age, user_weight, user_height, user_sex, user_scope, " \
-                "user_times_at_gym, user_email) values ('{}',{},{},{},'{}','{}',{},'{}');".format(user_name, user_age,
+                "user_times_at_gym, user_email, user_calories_per_day) values ('{}',{},{},{},'{}','{}',{},'{}','{}');".format(user_name, user_age,
                                                                                           user_weight, user_height,
                                                                                           user_sex, user_scope,
-                                                                                          user_times_at_gym, user_email)
+                                                                                          user_times_at_gym, user_email,
+                                                                                          user_calories)
         print(query)
         cursor = mydb.cursor()
 
@@ -170,6 +179,7 @@ class ActionFormUserInfo(FormAction):
         except:
             dispatcher.utter_message("Error!")
 
+        dispatcher.utter_message("You can consume per day around {} calories !".format(user_calories))
         return []
 
     # def validate(self,dispatcher: CollectingDispatcher,tracker: Tracker,domain: Dict[Text, Any]) -> List[Dict]:
@@ -359,11 +369,6 @@ class ActionHelloWorldCustom(Action):
         except:
             dispatcher.utter_message("Sorry I could not find you by your email! :( ")
 
-
-
-
-
-
         noDaysWorkout = no_days_workout
         emailAddress = userEmail
         fileNameWord = 'PersonalisedWorkout.docx'
@@ -469,6 +474,55 @@ class ActionHelloWorldCustom(Action):
 
         return []
 
+
+class ActionResetConversation(Action):
+
+     def name(self) -> Text:
+            return "action_reset_conversation"
+
+     def run(self, dispatcher: CollectingDispatcher,
+             tracker: Tracker,
+             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+         dispatcher.utter_message("Conversation reseted!")
+
+         return [AllSlotsReset()]
+
+
+class ActionSearchExercise(Action):
+
+    def name(self) -> Text:
+        return "action_search_exercise"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        try:
+            mydb = mysql.connector.connect(host="localhost", user="root", passwd="p@ss123",
+                                        database="testdatabase")  # # auth_plugin='mysql_native_password'
+            
+            print("action_search_exercise")
+            exercise = tracker.get_slot('exercise_name')
+            print(exercise)
+            query = "select * from exercises where exercise_name = '{}';".format(exercise)
+            cursor = mydb.cursor()
+            print(query)
+            x = cursor.execute(query)
+            if x == 0:
+                print("Sorry, could not find you in the DB")
+            else:
+                result = cursor.fetchone()
+                print(result)
+
+                dispatcher.utter_message(text="To do {}, exercise targeting {}, you have to: {}. Here is a video explaining how to do it {}".format(result[0], result[7], result[3],result[6]))
+                # for resultls in result:
+                # for counter, results in enumerate(result):
+                #     print(counter+1, "Welcome back, {} !".format(str(result[0])))
+        except:
+            print("SQL statement could not be found")
+
+        return []
 
 class ActionHelloWorldCustom(Action):
 

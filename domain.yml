@@ -6,6 +6,8 @@ actions:
 - action_search_recipe
 - action_search_gym
 - action_generate_workout
+- action_reset_conversation
+- action_search_exercise
 - utter_ask_create_account
 - utter_ask_mail_address
 - utter_ask_meal
@@ -34,6 +36,7 @@ entities:
 - exercice_type
 - main_ingredient
 - muscular_group
+- exercise_name
 - user_age
 - user_email
 - user_height
@@ -45,6 +48,7 @@ entities:
 forms:
 - form_user
 intents:
+- reset
 - generate_workout
 - gym_search_provider
 - calories_search_provider
@@ -74,10 +78,10 @@ intents:
 - inform
 - ingredient_inform
 - recipe_search_provider
+- exercises_details_search_provider
 responses:
   utter_ask_create_account:
-  - text: 'Then tell you about me a little bit. I am a bot that can give you workouts
-      for different muscle groups. You can fill up your details so that I can give
+  - text: 'I am a bot that can give you workouts for different muscle groups, create workouts, recommend food. You can fill up your details so that I can give
       you personalised workouts. Do you want to sign up for this? '
   utter_ask_mail_address:
   - text: Great! What is your E-mail address?
@@ -87,11 +91,11 @@ responses:
   - text: For what muscle group? (chest, arms, legs, back, shoulders)
   - text: To give you the best {exercice_type} I need to know for what muscle group.
   utter_ask_user_age:
-  - text: What is your age?
+  - text: What is your age (years)?
   utter_ask_user_email:
   - text: What is your email?
   utter_ask_user_height:
-  - text: What is your height?
+  - text: What is your height(cm)?
   utter_ask_user_name:
   - text: What is your name?
   utter_ask_user_scope:
@@ -101,7 +105,7 @@ responses:
   utter_ask_user_times_at_gym:
   - text: How often would you like to workout (days per week)?
   utter_ask_user_weight:
-  - text: What is your weight?
+  - text: What is your weight(kg)?
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
@@ -165,3 +169,5 @@ slots:
   user_weight:
     auto_fill: false
     type: unfeaturized
+  exercise_name:
+    type: text
