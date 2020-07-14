@@ -32,6 +32,12 @@ actions:
 - utter_submit
 - utter_who_is_boss
 - utter_you_are_welcome
+- utter_bot_name
+- utter_bot_what_are_you
+- utter_bot_who_created
+- utter_bot_what_age
+- utter_bot_what_you_doing
+- utter_bot_what_scope
 entities:
 - exercice_type
 - main_ingredient
@@ -79,6 +85,13 @@ intents:
 - ingredient_inform
 - recipe_search_provider
 - exercises_details_search_provider
+- bot_name
+- bot_what_are_you
+- bot_who_created
+- bot_what_age
+- bot_what_you_doing
+- bot_what_scope
+- bot_help
 responses:
   utter_ask_create_account:
   - text: 'I am a bot that can give you workouts for different muscle groups, create workouts, recommend food. You can fill up your details so that I can give
@@ -118,7 +131,7 @@ responses:
   utter_happy:
   - text: Great, carry on!
   utter_have_we_met:
-  - text: Hello! I am a gym assistant. Have we talked before?
+  - text: Have we talked before?
   utter_how_can_I_help:
   - text: What can I do for you is to give you exercices for a specified muscle group
       or give you a recipe if you provide me some ingredients. How can i help?
@@ -127,12 +140,24 @@ responses:
   utter_mastername:
   - text: Ovidiu is my master.
   utter_submit:
-  - text: Your name is {name} and your email is {email}. Is this correct?
+  - text: Your name is {name} and your email is {email}.
   utter_who_is_boss:
   - text: Ovidiu is the boss.
   utter_you_are_welcome:
   - text: You are welcome!
   - text: Any time!
+  utter_bot_name:
+  - text: My name is Chatfit, but my friends call the The Fitness Bot.
+  utter_bot_what_are_you:
+  - text: I am personal trainer! Ahaha joking, I am just a chat bot that can help beginners with their first months at the gym. I am also useful for the athletes with experience. P.S. I would really like to be an actual personal trainer!
+  utter_bot_who_created:
+  - text: Ovidiu Negru created me, guided by Mr Cristian Uscatu. I am Ovidiu's Bachelor Thesis.
+  utter_bot_what_age:
+  - text: It is difficult to tell you my age, I am not fully born. I am still developing.
+  utter_bot_what_you_doing:
+  - text: I am waiting to give answers to your questions!
+  utter_bot_what_scope:
+  - text: I can give you a personalized workout, if you give me some informations about you, I can explain how to execute them, I can give you more exercises, I can also give you recipes and calculate the callories you need per day!
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60

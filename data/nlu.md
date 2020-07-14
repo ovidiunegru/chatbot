@@ -60,6 +60,41 @@
 - am I talking to a bot?
 - am I talking to a human?
 
+## intent:bot_name
+- what is your name?
+- how can i tell you?
+- how may i call you
+
+## intent:bot_what_are_you
+- what are you?
+- you are what?
+
+## intent:bot_who_created
+- who created you?
+- who is your master?
+- who developed you?
+
+## intent:bot_what_age
+- what is your are?
+- how old are you?
+
+## intent:bot_what_you_doing
+- what are you doing?
+- how about you?
+
+## intent:bot_what_scope
+- what is your scope
+- what are you supposed to do
+- how can you help me
+
+## intent:bot_help
+- help
+- i need some help
+- can you please help me
+- i need your help
+- i need guidance
+- i need your guidance
+
 ## intent:exercice_search_provider
 - I want to [train](exercice_type) my [legs](muscular_group)
 - I need some [exercices](exercice_type)
@@ -183,10 +218,12 @@
 - i exagerated today
 - today i ate
 - calculate the calories please
+- calculate my meal
+- tell me how many calories i have in my meal
 
 ## intent:gym_search_provider
 - show me some gyms
-- where can i find a gym
+- where can i find a gym nearby
 - where can i go and exercise
 - nearby gyms
 - closest gyms

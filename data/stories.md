@@ -61,7 +61,7 @@
   - utter_how_can_I_help
 
   ## just asking a questions
-* greet
+* bot_help
   - utter_have_we_met
 * deny
   - utter_ask_create_account
@@ -69,7 +69,7 @@
   - utter_how_can_I_help 
   
 ## create a new user
-* greet
+* bot_help
   - utter_have_we_met
 * deny
   - utter_ask_create_account
@@ -77,7 +77,6 @@
   - form_user
   - form{"name": "form_user"}
   - form{"name": null}
-* affirm
   - utter_how_can_I_help
   
 ## interactive_story_1
@@ -165,3 +164,27 @@
     - slot{"main_ingredient": "avocados"}
     - action_search_meal
 * thanks
+
+## bot name
+* bot_name
+  - utter_bot_name
+
+## bot what are you
+* bot_what_are_you
+  - utter_bot_what_are_you
+
+## bot who created you
+* bot_who_created
+  - utter_bot_who_created
+
+## bot what is your age
+* bot_what_age
+  - utter_bot_what_age
+
+## bot what are you doing
+* bot_what_you_doing
+  - utter_bot_what_you_doing
+
+## bot what is your scope
+* bot_what_scope
+  - utter_bot_what_scope

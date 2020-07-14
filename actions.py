@@ -153,11 +153,18 @@ class ActionFormUserInfo(FormAction):
         user_scope = tracker.get_slot('user_scope')
         user_times_at_gym = tracker.get_slot('user_times_at_gym')
         user_email = tracker.get_slot('user_email')
+
         user_calories = 0
         if user_sex == "F":
             user_calories = 387 - (7.31 * int(user_age)) + 1.27 * ((10.9 * int(user_weight)) + (660.7 * int(user_height)))
         else:
             user_calories = 864  - (9.72 * int(user_age)) + 1.27 * ((14.2 * int(user_weight)) + (503 * int(user_height)))
+        user_calories = user_calories / 4.184
+        user_calories = round(user_calories,2)
+
+
+        email1 = user_email.split("|")[1].split(">")[0]
+        user_email=email1
 
 
         mydb = mysql.connector.connect(host="localhost", user="root", passwd="p@ss123",
@@ -180,7 +187,7 @@ class ActionFormUserInfo(FormAction):
             dispatcher.utter_message("Error!")
 
         dispatcher.utter_message("You can consume per day around {} calories !".format(user_calories))
-        return []
+        return [SlotSet("user_email", user_email)]
 
     # def validate(self,dispatcher: CollectingDispatcher,tracker: Tracker,domain: Dict[Text, Any]) -> List[Dict]:
     #     userName=tracker.get_slot('user_name')
@@ -245,8 +252,8 @@ class ActionMealSearch(Action):
         app_key = '1c41fde6eeefe0f9f39d1100d3eed619'
 
 
-        #mealIngredients = tracker.latest_message.get("text", "")
-        mealIngredients = tracker.get_slot('main_ingredient')
+        mealIngredients = tracker.latest_message.get("text")
+        #mealIngredients = tracker.get_slot('main_ingredient')
 
         if not mealIngredients:
             print(mealIngredients)
@@ -447,7 +454,7 @@ class ActionHelloWorldCustom(Action):
         msg['To'] = email_send
         msg['Subject'] = subject
 
-        body = 'Hi there, you will find attached your personalised workout, created by GymChat!'
+        body = 'Hi there, you will find attached your personalised workout, created by The Fitness Bot!'
         msg.attach(MIMEText(body, 'plain'))
 
         filename = fileNameWord
