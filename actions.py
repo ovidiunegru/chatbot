@@ -206,7 +206,7 @@ class ActionRecipeSearch(Action):
         print("action_search_recipe")
 
         app_id = 'ff85071b'
-        app_key = 'd3efa4ef3ec092ef2cc016bb530897f4'
+        app_key = ''
 
 
         recipeIngredients = tracker.get_slot('main_ingredient')
@@ -249,7 +249,7 @@ class ActionMealSearch(Action):
 
         print("action_search_meal")
         app_id = '2ae12d8e'
-        app_key = '1c41fde6eeefe0f9f39d1100d3eed619'
+        app_key = ''
 
 
         mealIngredients = tracker.latest_message.get("text")
@@ -289,7 +289,7 @@ class ActionGymSearch(Action):
 
 
         # Define the API Key.
-        API_KEY = 'AIzaSyCa-lfc1U7no3J5vgEquiMrHsWEoQrq0WQ'
+        API_KEY = ''
 
         # Define the Client
         gmaps = googlemaps.Client(key = API_KEY)
@@ -444,7 +444,7 @@ class ActionHelloWorldCustom(Action):
         document.save(fileNameWord)
 
         email_user = 'thefitnessbot@gmail.com'
-        email_password = 'Restanta123'
+        email_password = ''
         email_send = emailAddress
 
         subject = 'Personal workout'
