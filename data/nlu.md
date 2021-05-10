@@ -130,7 +130,6 @@
 ## intent:user_name_inform
 - my name is [Negru Ovidiu](user_name)
 - [John Cena](user_name) is my name
-- [Catalin Doinea](user_name)
 - [Bogdan Constantin](user_name)
 - [John Doe](user_name)
 
